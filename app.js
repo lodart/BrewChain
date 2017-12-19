@@ -28,6 +28,13 @@ let BrewHTTP = function (){
 		res.send();
 	})
 
+	app.get('/printChain/', (req, res)=>{
+		console.log('PRINTING CHAIN ...');
+		//console.log(node1.getChain());
+		console.log(node1.getStats());
+		res.send();
+	})
+
 	app.listen(http_port, () => {
 		console.log(`http server up.. ${http_port}`);
 	})

@@ -24,6 +24,8 @@ const BrewNode = function(port){
         });		
     }
 
+	
+
     const messageHandler = (connection) =>{
         connection.on('message', (data) => {
             const msg = JSON.parse(data);
@@ -117,9 +119,16 @@ const BrewNode = function(port){
 
     const getStats = () => {
         return {
-            blocks: chain.getTotalBlocks()
+            //blocks: chain.getTotalBlocks()
+            blocks: chain.getChain()
         }
     }
+    
+    const getChain = () => {
+		return {
+			chain: chain.getChain()
+		}
+	}
 
     const addPeer = (host, port) => {
         let connection = new WebSocket(`ws://${host}:${port}`);
