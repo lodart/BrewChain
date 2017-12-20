@@ -52,7 +52,7 @@ const BrewChain = function() {
 
 		while(true){
 			block.hash = createHash(block);
-			if(block.hash.slice(-4) === "0000"){	
+			if(block.hash.slice(-3) === "000"){	
 				return block;
 			}else{
 				block.nonce++;
