@@ -15,9 +15,9 @@ let BrewHTTP = function (){
 
 	app.use(bodyParser.json());
 
-	app.get('/addNode/:port', (req, res)=>{
+	app.get('/addNode/:host/:port', (req, res)=>{
 		console.log('add host: '+req.params.port)
-		node1.addPeer('localhost', req.params.port)
+		node1.addPeer(req.params.host, req.params.port)
 
 		res.send();
 	})

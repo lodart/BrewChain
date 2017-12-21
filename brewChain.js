@@ -9,7 +9,7 @@ const BrewChain = function() {
 		genesisBlock = { 
             index: 0
 		  , timestamp: 1511818270000
-		  , data: 'our genesis data'
+		  , data: 'The game'
 		  , previousHash: "-1"
 		  , nonce: 0
 		};
@@ -52,7 +52,7 @@ const BrewChain = function() {
 
 		while(true){
 			block.hash = createHash(block);
-			if(block.hash.slice(-3) === "000"){	
+			if(block.hash.slice(-6) === "000000"){	
 				return block;
 			}else{
 				block.nonce++;
@@ -112,7 +112,7 @@ const BrewChain = function() {
         		return false;
         	}
 
-        	if(block.hash.slice(-3) !== "000"){	
+        	if(block.hash.slice(-6) !== "000000"){	
         		return false;
         	}
 
